@@ -6,6 +6,7 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
     /* border: 1px solid red; */
 }
 
@@ -13,6 +14,15 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 14px;
+    background-color: black;
+    color: white;
 }
 
 .main {
@@ -27,6 +37,9 @@ body {
 .container {
     height: 500px;
     width: 500px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 /* grid styling */
@@ -36,4 +49,55 @@ body {
 
 .grid {
     border: 1px solid lightgrey;
+}
+
+.grid:hover {
+    background-color: lightgray;
+}
+
+
+/* grid btns */
+.grid-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    flex-wrap: wrap;
+}
+
+.grid-btns button {
+    font-size: 16px;
+    padding: 8px 16px;
+    border: 2px solid lightgrey;
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.grid-btns input {
+    width: 66px;
+    height: 36px;
+}
+
+.grid-btns > *:hover {
+    transform: scale(1.1);
+}
+
+.color-choice.selected {
+    border: 5px solid gold;
+    border-radius: 5px;
+}
+
+/* footer */
+
+.footer {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    background-color: black;
+    color: white;
+}
+
+.footer a {
+    color: goldenrod
 }
