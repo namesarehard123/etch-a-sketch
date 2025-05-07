@@ -114,3 +114,7 @@ container.addEventListener("mouseover", handleFill);
 colorInput.addEventListener("input", handleManualInput);
 gridBtns.addEventListener("click", handleButtons);
 fillGrids(container, gridSize);
+
+container.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+})
