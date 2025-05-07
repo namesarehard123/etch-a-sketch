@@ -57,6 +57,56 @@ function handleFill(event) {
     }
 }
 
+function handleManualInput(event) {
+    fillType = 0;
+    color = event.target.value;
+}
+
+function handleButtons(event) {
+    console.log(event.target.nodeName);
+    if (event.target.nodeName === "BUTTON") {
+        switch (event.target.id) {
+            case "grid-size":
+                let size = parseInt(prompt("What grid size do you want? (Max:100):"));
+                if (size >= 100) {
+                    size = 100;
+                };
+                gridSize = size;
+                fillGrids(container, gridSize);
+                break;
+            
+            case "clear":
+                fillGrids(container, gridSize);
+                break;
+            
+            case "random":
+                fillType = 1;
+                break;
+            
+            case "darken":
+                fillType = 2;
+                break;
+            default:
+                console.log("Something is broken!");
+                break;
+        }
+    }
+
+    // adding a selected class to the color inputs for highlight
+    if (Array.from(event.target.classList).includes("color-choice")) {
+        const selected = document.querySelector(".selected");
+        if (selected) {
+            selected.classList.remove("selected");
+        }
+        event.target.classList.add("selected");
+    }
+}
+
 const container = document.querySelector(".container");
-fillGrids(container, gridSize);
+const colorInput = document.querySelector("#color-input");
+const gridBtns = document.querySelector(".grid-btns");
+
 container.addEventListener("mouseover", handleFill);
+colorInput.addEventListener("input", handleManualInput);
+gridBtns.addEventListener("click", handleButtons);
+fillGrids(container, gridSize);
