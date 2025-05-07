@@ -6,7 +6,7 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 body {
@@ -27,4 +27,13 @@ body {
 .container {
     height: 500px;
     width: 500px;
+}
+
+/* grid styling */
+.grid-row {
+    display: flex;
+}
+
+.grid {
+    border: 1px solid lightgrey;
 }
