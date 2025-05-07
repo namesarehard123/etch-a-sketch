@@ -68,6 +68,10 @@ function handleButtons(event) {
         switch (event.target.id) {
             case "grid-size":
                 let size = parseInt(prompt("What grid size do you want? (Max:100):"));
+                if (!size) {
+                    size = gridSize;
+                }
+                
                 if (size >= 100) {
                     size = 100;
                 };
